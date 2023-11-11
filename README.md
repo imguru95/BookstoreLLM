@@ -38,6 +38,20 @@ Open your web browser and go to http://localhost:5000 to access the application.
 ## Deployment
 Deploy this application on information tablets at expos, information kiosks, display monitors, and more to promote user engagement and the habit of reading books.
 
+## References
+OpenAI: https://platform.openai.com/docs/overview
+
+Flask: https://flask.palletsprojects.com/en/3.0.x/
+
+JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+CSS: https://developer.mozilla.org/en-US/docs/Web/CSS
+
+Bootstrap: https://getbootstrap.com/docs/4.1/getting-started/introduction/
+
+## Authors
+@imguru95
+
 ## Contributing
 If you'd like to contribute to this project, please follow our contribution guidelines.
 

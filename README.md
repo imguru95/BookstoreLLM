@@ -50,7 +50,7 @@ CSS: https://developer.mozilla.org/en-US/docs/Web/CSS
 Bootstrap: https://getbootstrap.com/docs/4.1/getting-started/introduction/
 
 ## Authors
-@imguru95
+[@imguru95](https://github.com/imguru95)
 
 ## Contributing
 If you'd like to contribute to this project, please follow our contribution guidelines.

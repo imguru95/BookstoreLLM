@@ -1,0 +1,52 @@
+.fade-in {
+opacity: 0;                  /* Start with transparency */
+animation-name: fadeIn;      /* Define the animation name */
+animation-duration: 0.5s;    /* Duration of the animation */
+animation-timing-function: ease-in-out; /* Timing function for a smooth effect */
+animation-fill-mode: forwards; /* Retain the final state of the animation */
+}
+
+@keyframes fadeIn {
+from {
+opacity: 0;
+}
+to {
+opacity: 1;
+}
+}
+
+.toggle-button {
+    cursor: pointer;
+    color: #007BFF;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    transition: color 0.3s;
+}
+.toggle-button i {
+    transition: transform 0.3s;
+}
+.hidden-info {
+    display: none;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.show-info {
+    display: table-row;
+}
+.row:hover .toggle-button {
+    color: #FF5733;
+}
+
+.hidden-info {
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+
+.show-info {
+opacity: 1;
+}

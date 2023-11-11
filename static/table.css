@@ -1,0 +1,29 @@
+.table-container {
+        border-radius: 10px;
+        padding: 20px;
+        justify-content: center;
+        display: flex;
+    }
+.table {
+    width: 1200px;
+    border-collapse: separate;
+    border-spacing: 0;
+    z-index: 90;
+    background-clip: padding-box;
+}
+.table th, .table td {
+    border: none;
+    padding: 8px;
+    position: relative;
+}
+.table th {
+    background-color: transparent;
+    font-weight: bold;
+    text-align: left;
+}
+.table td {
+    background-color: transparent;
+}
+.table tbody tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.9);
+}

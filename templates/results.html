@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Books</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/table.css" />
+    <link rel="stylesheet" type="text/css" href="/static/global.css" />
+    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='books.jpg') }}") no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    {% set field = results[0] %}
+    {% set list_books = results[1] %}
+    <div class="vstack gap-2">
+        <div>
+            <h1>Books in {{field}}</h1>
+        </div>
+        <div class="table-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Released</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% set results_len = list_books|length + 1 %}
+                {% for count in range(1, results_len) %}
+                    <tr class="row">
+                        <td>{{ list_books[count-1][0] }}
+                            <span class="toggle-button" onclick="toggleInfo({{ count }})">
+                                <i class="fas fa-caret-down"></i>
+                            </span>
+                        </td>
+                        <td>{{ list_books[count-1][1] }}</td>
+                        <td>{{ list_books[count-1][2] }}</td>
+                    </tr>
+                    <tr id="info{{ count }}" class="hidden-info">
+                        <td colspan="3">
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        const toggleInfo = (index) => {
+  const hiddenInfo = document.getElementById(`info${index}`);
+  const icon = hiddenInfo.previousElementSibling.querySelector('i');
+
+  const isInfoDisplayed = hiddenInfo.classList.contains('show-info');
+
+  if (!isInfoDisplayed) {
+    // If the info is not displayed, fetch data and show it
+    const currentUrl = window.location.href;
+    const parts = currentUrl.split('/');
+    const lastIndex = parts[parts.length - 1];
+
+    fetch(`/summary/${lastIndex}/${index}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+  // Handle the response from the backend here
+  const summaryValue = data.summary;
+  console.log(summaryValue);
+  // Populate the hidden-info row with the summary value
+  hiddenInfo.innerHTML = `
+    <td colspan="3">
+      ${summaryValue}
+    </td>
+  `;
+  // Show the hidden-info row with the fade-in animation
+  hiddenInfo.classList.add('show-info');
+  // Add an animation class for a smooth fade-in effect
+  hiddenInfo.classList.add('fade-in');
+})
+      .catch((error) => {
+        console.error(error);
+      });
+  } else {
+    // If the info is already displayed, hide it
+    hiddenInfo.classList.remove('show-info');
+    hiddenInfo.classList.remove('fade-in');
+  }
+
+  // Toggle the icon class
+  icon.classList.toggle('fa-caret-down');
+  icon.classList.toggle('fa-caret-up');
+};
+
+</script>
+</body>
+</html>

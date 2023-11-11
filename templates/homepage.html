@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome!</title>
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/global.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/spinner.css"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+                background: url("{{ url_for('static', filename='books_bg.jpg') }}") no-repeat;
+                background-size: cover;
+            }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Choose a field</h1>
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-3">
+            <button id="button1" class="btn btn-primary btn-block" onclick="showLoadingSpinner()">Computer Science
+            </button>
+            <form id="form1" action="/field/computerscience" method="POST" style="display: none;">
+                <input type="hidden" name="buttonId" value="button1">
+            </form>
+        </div>
+        <div class="col-md-3">
+            <button id="button2" class="btn btn-primary btn-block" onclick="showLoadingSpinner()">Psychology</button>
+            <form id="form2" action="/field/psychology" method="POST" style="display: none;">
+                <input type="hidden" name="buttonId" value="button2">
+            </form>
+        </div>
+        <div class="col-md-3">
+            <button id="button3" class="btn btn-primary btn-block" onclick="showLoadingSpinner()">Biology</button>
+            <form id="form3" action="/field/biology" method="POST" style="display: none;">
+                <input type="hidden" name="buttonId" value="button3">
+            </form>
+        </div>
+        <div class="col-md-3">
+            <button id="button4" class="btn btn-primary btn-block" onclick="showLoadingSpinner()">Spirituality</button>
+            <form id="form4" action="/field/spirituality" method="POST" style="display: none;">
+                <input type="hidden" name="buttonId" value="button4">
+            </form>
+        </div>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        <div class="horizontalgap" style="width:140px"></div>
+        <div class="col-md-3">
+            <button id="button5" class="btn btn-primary btn-block" onclick="showLoadingSpinner()">History</button>
+            <form id="form5" action="/field/history" method="POST" style="display: none;">
+                <input type="hidden" name="buttonId" value="button5">
+            </form>
+        </div>
+        <div class="col-md-3">
+            <button id="button6" class="btn btn-primary btn-block" onclick="showLoadingSpinner()">Literature</button>
+            <form id="form6" action="/field/literature" method="POST" style="display: none;">
+                <input type="hidden" name="buttonId" value="button5">
+            </form>
+        </div>
+        <div class="col-md-3">
+            <button id="button7" class="btn btn-primary btn-block" onclick="showLoadingSpinner()">Economics</button>
+            <form id="form7" action="/field/economics" method="POST" style="display: none;">
+                <input type="hidden" name="buttonId" value="button5">
+            </form>
+        </div>
+    </div>
+</div>
+<div class="loading-spinner" id="loadingSpinner">
+    <div class="spinner">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+</div>
+
+<script>
+        window.addEventListener("pageshow", function(event) {
+            var loadingSpinner = document.getElementById('loadingSpinner');
+            if (loadingSpinner) {
+                loadingSpinner.style.display = 'none';
+            }
+        });
+
+        function showLoadingSpinner() {
+            document.getElementById("loadingSpinner").style.display = "block";
+        }
+
+        function submitForm(buttonId) {
+            const form = document.getElementById(`form${buttonId}`);
+            form.submit();
+        }
+
+        document.getElementById("button1").addEventListener("click", () => submitForm("1"));
+        document.getElementById("button2").addEventListener("click", () => submitForm("2"));
+        document.getElementById("button3").addEventListener("click", () => submitForm("3"));
+        document.getElementById("button4").addEventListener("click", () => submitForm("4"));
+        document.getElementById("button5").addEventListener("click", () => submitForm("5"));
+        document.getElementById("button6").addEventListener("click", () => submitForm("6"));
+        document.getElementById("button7").addEventListener("click", () => submitForm("7"));
+</script>
+</body>
+</html>

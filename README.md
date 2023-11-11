@@ -1,5 +1,5 @@
 # Bookstore Software Application
-Welcome to the Bookstore Software Application! This application is designed to provide users with a user-friendly platform for accessing curated book recommendations across various genres. In the digital age, finding relevant book recommendations can be challenging, and this app aims to address that by offering a seamless experience.
+Welcome to the Bookstore Software Application! This application is designed to provide users with a user-friendly platform for accessing curated book recommendations across various genres. In the digital age, finding relevant book recommendations can be challenging, and this app aims to address that by offering a seamless experience by using the power of GenAI(Open AI's gpt-3.5-turbo model)
 
 ## Features
 1. Genre-specific Recommendations: Explore top books across different genres to discover new and exciting reads.
@@ -10,7 +10,7 @@ Welcome to the Bookstore Software Application! This application is designed to p
 
 4. Book Summaries: Get a quick overview of books through concise and informative summaries.
 
-5. ChatGPT Integration: Utilize the power of the GPT-3.5 Turbo model to make dynamic calls to the ChatGPT API. Engage in conversations, ask for personalized recommendations, and enhance the overall user experience.
+5. ChatGPT Integration: Utilize the power of the GPT-3.5 Turbo model to make dynamic calls to the ChatGPT API and enhance user experience.
 
 ## Technologies Used
 1. JavaScript: The primary programming language for building dynamic and interactive features.

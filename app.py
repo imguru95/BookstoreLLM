@@ -56,4 +56,4 @@ def process_data(reply):# the processing can be made robust by handling differen
     return list_books
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=8000)

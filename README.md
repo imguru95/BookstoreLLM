@@ -49,6 +49,9 @@ CSS: https://developer.mozilla.org/en-US/docs/Web/CSS
 
 Bootstrap: https://getbootstrap.com/docs/4.1/getting-started/introduction/
 
+                            YouTube video
+[![Bookstore using LLM](https://img.youtube.com/vi/NEPhKt40luk/0.jpg)](https://www.youtube.com/watch?v=NEPhKt40luk&t=1s "Bookstore using LLM")
+
 ## Authors
 [@imguru95](https://github.com/imguru95)
 

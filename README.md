@@ -33,7 +33,7 @@ Install Dependencies:
 
 Run the Application:
 `python app.py`
-Open your web browser and go to http://localhost:5000 to access the application.
+Open your web browser and go to http://localhost:8000 to access the application.
 
 ## Deployment
 Deploy this application on information tablets at expos, information kiosks, display monitors, and more to promote user engagement and the habit of reading books.

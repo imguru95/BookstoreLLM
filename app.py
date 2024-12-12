@@ -11,7 +11,7 @@ global_fields = {"computerscience":"Computer Science", "psychology":"Psychology"
 def home():
     return render_template('homepage.html')
 
-@app.route('/field/<field>', methods=['GET', 'POST'])
+@app.route('/field/<field>', methods=['GET'])
 def display_books(field):
     global global_fields
     prompt = f'List the top 10 books in the field of {global_fields[field]} along with their release dates'
@@ -21,7 +21,7 @@ def display_books(field):
         lst = process_data(reply)
     return render_template("results.html", results=[global_fields[field], lst])
 
-@app.route('/summary/<field>/<index>', methods=['GET', 'POST'])
+@app.route('/summary/<field>/<index>', methods=['GET'])
 def get_summary(field, index):
     global global_fields
     prompt = f'Give me a 2 sentence summary of book {index} in {global_fields[field]} that you just output'
